@@ -9,7 +9,7 @@
                     <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam
                         ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita
                         duo justo magna dolore erat amet</p>
-                    <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A Table</a>
+                    <a href="#reservation" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A Table</a>
                 </div>
                 <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                     <img class="img-fluid" src="img/hero.png" alt="">
@@ -114,7 +114,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="{{ route('about') }}">Read More</a>
                 </div>
             </div>
         </div>
@@ -251,7 +251,7 @@
     </div>
 
     <!-- Reservation Start -->
-    <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s" id="reservation">
         <div class="row g-0">
             <div class="col-md-6">
                 <div class="video">
@@ -349,64 +349,56 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item text-center rounded overflow-hidden">
                         <div class="rounded-circle overflow-hidden m-4">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
+                            <img class="img-fluid" src="{{ asset('assets/img/team-1.jpg') }}" alt="Chef Marcus">
                         </div>
-                        <h5 class="mb-0">Full Name</h5>
-                        <small>Designation</small>
-                        <div class="d-flex justify-content-center mt-3">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i
-                                    class="fab fa-instagram"></i></a>
+                        <h5 class="mb-0">Marcus Chen</h5>
+                        <small>Executive Head Chef</small>
+                        <div class="d-flex justify-content-center mt-3 mb-4">
+                            <a class="btn btn-square btn-primary mx-1" href="#"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item text-center rounded overflow-hidden">
                         <div class="rounded-circle overflow-hidden m-4">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
+                            <img class="img-fluid" src="{{ asset('assets/img/team-2.jpg') }}" alt="Chef Carlos">
                         </div>
-                        <h5 class="mb-0">Full Name</h5>
-                        <small>Designation</small>
-                        <div class="d-flex justify-content-center mt-3">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i
-                                    class="fab fa-instagram"></i></a>
+                        <h5 class="mb-0">Carlos Rodriguez</h5>
+                        <small>Pastry Chef</small>
+                        <div class="d-flex justify-content-center mt-3 mb-4">
+                            <a class="btn btn-square btn-primary mx-1" href="#"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item text-center rounded overflow-hidden">
                         <div class="rounded-circle overflow-hidden m-4">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
+                            <img class="img-fluid" src="{{ asset('assets/img/team-3.jpg') }}" alt="Chef David">
                         </div>
-                        <h5 class="mb-0">Full Name</h5>
-                        <small>Designation</small>
-                        <div class="d-flex justify-content-center mt-3">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i
-                                    class="fab fa-instagram"></i></a>
+                        <h5 class="mb-0">David Smith</h5>
+                        <small>Sous Chef</small>
+                        <div class="d-flex justify-content-center mt-3 mb-4">
+                            <a class="btn btn-square btn-primary mx-1" href="#"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item text-center rounded overflow-hidden">
                         <div class="rounded-circle overflow-hidden m-4">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
+                            <img class="img-fluid" src="{{ asset('assets/img/team-4.jpg') }}" alt="Chef Amara">
                         </div>
-                        <h5 class="mb-0">Full Name</h5>
-                        <small>Designation</small>
-                        <div class="d-flex justify-content-center mt-3">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i
-                                    class="fab fa-instagram"></i></a>
+                        <h5 class="mb-0">Jerry Williams</h5>
+                        <small>Sushi Specialist</small>
+                        <div class="d-flex justify-content-center mt-3 mb-4">
+                            <a class="btn btn-square btn-primary mx-1" href="#"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -424,19 +416,62 @@
                 <h1 class="mb-5">Our Clients Say!!!</h1>
             </div>
             <div class="owl-carousel testimonial-carousel">
-                @foreach ($reviews as $review)
+                @forelse ($reviews as $review)
                     <div class="testimonial-item bg-transparent border rounded p-4">
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>{{ $review->review }}</p>
                         <div class="d-flex align-items-center">
-                            {{-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 50px; height: 50px;"> --}}
+                            <img class="img-fluid flex-shrink-0 rounded-circle"
+                                src="{{ asset('assets/img/testimonial-' . (($loop->index % 3) + 1) . '.jpg') }}"
+                                style="width: 50px; height: 50px;">
                             <div class="ps-3">
                                 <h5 class="mb-1">{{ $review->name }}</h5>
-                                {{-- <small>Profession</small> --}}
+                                <small>Valued Customer</small>
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <!-- Default testimonials when database is empty -->
+                    <div class="testimonial-item bg-transparent border rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>The food here is absolutely incredible! The flavors are perfectly balanced, and every dish feels
+                            like a work of art. I've been coming here for months and have never been disappointed.</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle"
+                                src="{{ asset('assets/img/testimonial-1.jpg') }}" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h5 class="mb-1">Sarah Mitchell</h5>
+                                <small>Food Blogger</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>Best dining experience in the city! The ambiance is wonderful, staff is incredibly friendly, and
+                            the signature dishes are out of this world. Highly recommend the chef's special!</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle"
+                                src="{{ asset('assets/img/testimonial-2.jpg') }}" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h5 class="mb-1">James Thompson</h5>
+                                <small>Business Executive</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>We celebrated our anniversary here and it was magical! The private dining experience, the
+                            exquisite wine selection, and the personalized service made it an unforgettable evening.</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle"
+                                src="{{ asset('assets/img/testimonial-3.jpg') }}" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h5 class="mb-1">Emily Rodriguez</h5>
+                                <small>Regular Customer</small>
+                            </div>
+                        </div>
+                    </div>
+                @endforelse
             </div>
         </div>
     </div>

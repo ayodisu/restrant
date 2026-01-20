@@ -22,15 +22,22 @@ class FoodController extends Controller
         if (auth()->user()) {
             $cartVerifying = Cart::where('food_id', $id)->where('user_id', Auth::user()->id)->count();
 
-        return view('food.food-details', compact('foodItem', 'cartVerifying'));
-        }else {
+            return view('food.food-details', compact('foodItem', 'cartVerifying'));
+        } else {
             return view('food.food-details', compact('foodItem'));
         }
-        
     }
 
     public function cart(Request $request, $id)
     {
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'food_id' => 'required|exists:foods,id',
+            'name' => 'required|string|max:255',
+            'image' => 'nullable|string',
+            'price' => 'required|numeric|min:0',
+        ]);
+
         $cart = Cart::create([
             "user_id" => $request->user_id,
             "food_id" => $request->food_id,
@@ -42,8 +49,6 @@ class FoodController extends Controller
         if ($cart) {
             return redirect()->route('food.details', $id)->with(['success' => 'Items added to cart successfully']);
         }
-
-        // return view('food.food-details', compact('foodItem'));
     }
 
 
@@ -110,6 +115,16 @@ class FoodController extends Controller
 
     public function storeCheckout(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'town' => 'required|string|max:100',
+            'country' => 'required|string|max:100',
+            'phone_number' => 'required|string|max:20',
+            'address' => 'required|string|max:500',
+            'price' => 'required|numeric|min:0',
+        ]);
+
         $checkout = Checkout::create([
             "name" => $request->name,
             "email" => $request->email,
@@ -119,23 +134,15 @@ class FoodController extends Controller
             "address" => $request->address,
             "user_id" => Auth::user()->id,
             "price" => $request->price,
-
         ]);
 
-        // echo "paypal";
-
         if ($checkout) {
-
             if (FacadesSession::get('price') == 0) {
-
                 abort('403');
             } else {
-
                 return redirect()->route('food.pay');
             }
         }
-
-        // return view('food.food-details', compact('foodItem'));
     }
 
 
@@ -166,12 +173,12 @@ class FoodController extends Controller
             } else {
 
                 FacadesSession::forget('price');
-                
+
                 return view('food.success')->with(['success' => 'Payment Successful']);
             }
         }
 
-        
+
 
         return view('food.pay');
     }
@@ -193,30 +200,29 @@ class FoodController extends Controller
         $currentDate = date('m/d/Y h:i A');
 
         if ($request->date == $currentDate || $request->date < $currentDate) { // '||' is shorthand for 'OR'
-            
+
             return redirect()->route('home')->with(['error' => 'Date Unavailable']);
+        } else {
 
-        }else {
-            
-        $bookingTables = Booking::create([
-            "user_id" => Auth::user()->id,
-            "name" => $request->name,
-            "email" => $request->email,
-            "date" => $request->date,
-            "num_people" => $request->num_people,
-            "spe_request" => $request->spe_request,
+            $bookingTables = Booking::create([
+                "user_id" => Auth::user()->id,
+                "name" => $request->name,
+                "email" => $request->email,
+                "date" => $request->date,
+                "num_people" => $request->num_people,
+                "spe_request" => $request->spe_request,
 
-        ]);
+            ]);
 
-        if($bookingTables) {
-            
-            return redirect()->route('home')->with(['booked' => 'Table booked']);
-        }
+            if ($bookingTables) {
+
+                return redirect()->route('home')->with(['booked' => 'Table booked']);
+            }
         }
     }
 
 
-    
+
     public function menu()
     {
         $breakfastFoods = Food::select()->take(4)->where('category', 'Breakfast')->orderby('id', 'desc')->get();
