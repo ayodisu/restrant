@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Food\Review;
 
-class usersController extends Controller
+class UsersController extends Controller
 {
     public function getBookings()
     {
@@ -47,7 +47,7 @@ class usersController extends Controller
         ]);
 
         if ($submitReview) {
-            return redirect()->route('users.review.create')->with(['success' => 'Thanks for your review!']);    }
-
+            return redirect()->route('users.review.create')->with(['success' => 'Thanks for your review!']);
         }
+    }
 }
