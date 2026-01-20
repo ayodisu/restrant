@@ -7,7 +7,7 @@ use App\Models\Food\Cart;
 use App\Models\Food\Checkout;
 use App\Models\Food\Booking;
 use Illuminate\Http\Request;
-use App\models\Food\Food;
+use App\Models\Food\Food;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\Facades\Session as FacadesSession;

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\models\Food\Food;
+use App\Models\Food\Food;
 use App\Models\Food\Review;
 use Illuminate\Http\Request;
 
