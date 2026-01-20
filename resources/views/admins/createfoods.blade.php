@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <h5 class="card-title mb-5 d-inline">Create Food Items</h5>
                     <form method="POST" action="{{ route('store.foods') }}" enctype="multipart/form-data">
-						@csrf
+                        @csrf
                         <!-- Email input -->
                         <div class="form-outline mb-4 mt-4">
                             <input type="text" name="name" id="form2Example1" class="form-control"
@@ -33,7 +33,7 @@
                             <select name="category" class="form-select  form-control" aria-label="Default select example">
                                 <option selected>Choose Category</option>
                                 <option value="Breakfast">Breakfast</option>
-                                <option value="Launch">Launch</option>
+                                <option value="Lunch">Lunch</option>
                                 <option value="Dinner">Dinner</option>
                             </select>
                         </div>

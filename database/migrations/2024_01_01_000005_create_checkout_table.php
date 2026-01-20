@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('town');
             $table->string('country');
-            $table->string('zipcode');
+            $table->string('zipcode')->nullable();
             $table->string('phone_number');
             $table->text('address');
             $table->unsignedBigInteger('user_id');
