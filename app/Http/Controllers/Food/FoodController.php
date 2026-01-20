@@ -190,34 +190,37 @@ class FoodController extends Controller
         Request()->validate([
 
             "name" => "required|max:40",
-            "email" => "required|max:40",
+            "email" => "required|email|max:40",
             "date" => "required",
-            "num_people" => "required",
-            "spe_request" => "required"
+            "num_people" => "required|integer|min:1",
+            "spe_request" => "nullable|max:500"
 
         ]);
 
-        $currentDate = date('m/d/Y h:i A');
+        try {
+            $bookingDate = \Carbon\Carbon::parse($request->date);
+        } catch (\Exception $e) {
+            return redirect()->route('home')->with(['error' => 'Invalid date format']);
+        }
 
-        if ($request->date == $currentDate || $request->date < $currentDate) { // '||' is shorthand for 'OR'
+        // Check if the booking date is in the past
+        if ($bookingDate->isPast()) {
+            return redirect()->route('home')->with(['error' => 'Cannot book a date in the past']);
+        }
 
-            return redirect()->route('home')->with(['error' => 'Date Unavailable']);
-        } else {
+        $bookingTables = Booking::create([
+            "user_id" => Auth::user()->id,
+            "name" => $request->name,
+            "email" => $request->email,
+            "date" => $bookingDate->format('Y-m-d H:i:s'),
+            "num_people" => $request->num_people,
+            "spe_request" => $request->spe_request ?? '',
 
-            $bookingTables = Booking::create([
-                "user_id" => Auth::user()->id,
-                "name" => $request->name,
-                "email" => $request->email,
-                "date" => $request->date,
-                "num_people" => $request->num_people,
-                "spe_request" => $request->spe_request,
+        ]);
 
-            ]);
+        if ($bookingTables) {
 
-            if ($bookingTables) {
-
-                return redirect()->route('home')->with(['booked' => 'Table booked']);
-            }
+            return redirect()->route('home')->with(['booked' => 'Table booked successfully!']);
         }
     }
 
