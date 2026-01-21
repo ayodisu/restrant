@@ -232,7 +232,7 @@
             <div class="copyright py-4">
                 <div class="row align-items-center">
                     <div class="col-12 text-center">
-                        <p class="mb-0">&copy; 2026 Coffeefy. Developed by Abdulwahab. All rights reserved.</p>
+                        <p class="mb-0">&copy; 2026 Restrant. Developed by Abdulwahab. All rights reserved.</p>
                     </div>
                 </div>
             </div>
