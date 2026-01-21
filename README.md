@@ -38,7 +38,7 @@ A full-featured restaurant management system built with Laravel 10, featuring an
 
 ## 📁 Project Structure
 
-```
+```text
 restrant/
 ├── app/
 │   ├── Http/
@@ -128,6 +128,7 @@ restrant/
     ```
 
 8. **Start the server**
+
     ```bash
     php artisan serve
     ```
@@ -194,11 +195,7 @@ This project is open-sourced software licensed under the [MIT license](https://o
 
 ## 👨‍💻 Developer
 
-**Abdulwahab Disu**
-
-- GitHub: [@ayodisu](https://github.com/ayodisu)
-- Twitter: [@\_ayodisu](https://x.com/_ayodisu)
-- LinkedIn: [abdulwahabdisu](https://www.linkedin.com/in/abdulwahabdisu/)
+Developed by **Abdulwahab Disu** — [GitHub](https://github.com/ayodisu) · [Twitter](https://x.com/_ayodisu) · [LinkedIn](https://www.linkedin.com/in/abdulwahabdisu/)
 
 ---
 
