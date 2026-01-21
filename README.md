@@ -1,67 +1,205 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🍽️ Restoran - Restaurant Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-featured restaurant management system built with Laravel 10, featuring an online food ordering system, table booking, customer reviews, and a modern admin dashboard.
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-10.x-FF2D20?style=flat&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4?style=flat&logo=php&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat&logo=bootstrap&logoColor=white)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Customer Portal
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Browse Menu** - View food items by category (Breakfast, Lunch, Dinner)
+- **Shopping Cart** - Add items to cart and manage quantities
+- **Online Ordering** - Complete checkout with delivery details
+- **Table Booking** - Reserve tables with date, time, and guest count
+- **Customer Reviews** - Share dining experiences and feedback
+- **Order History** - Track past orders and bookings
 
-## Learning Laravel
+### Admin Dashboard
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Modern UI** - Clean, responsive design with Bootstrap 5
+- **Order Management** - View, update status, and delete orders
+- **Booking Management** - Handle table reservations
+- **Food Menu Management** - Add, view, and remove food items
+- **Admin Management** - Create and manage admin accounts
+- **Dashboard Analytics** - Quick stats on orders, bookings, and more
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🛠️ Tech Stack
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Component      | Technology                                     |
+| -------------- | ---------------------------------------------- |
+| Backend        | Laravel 10.x                                   |
+| Frontend       | Blade Templates, Bootstrap 5.3, Font Awesome 6 |
+| Database       | MySQL                                          |
+| Authentication | Laravel UI (Multi-guard: Users & Admins)       |
+| Build Tool     | Vite                                           |
 
-## Laravel Sponsors
+## 📁 Project Structure
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```
+restrant/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── Admins/          # Admin dashboard controllers
+│   │   │   ├── Food/            # Food, cart, checkout controllers
+│   │   │   ├── Users/           # User portal controllers
+│   │   │   └── HomeController   # Public pages
+│   │   └── Middleware/
+│   └── Models/
+│       ├── Admin/               # Admin model
+│       ├── Food/                # Food, Cart, Checkout, Booking, Review
+│       └── User.php
+├── database/
+│   └── migrations/              # All database migrations
+├── resources/
+│   └── views/
+│       ├── admins/              # Admin dashboard views
+│       ├── auth/                # Login/Register views
+│       ├── layouts/             # app.blade.php, admin.blade.php
+│       ├── pages/               # About, Contact, Services
+│       └── users/               # User booking/order history
+├── routes/
+│   └── web.php                  # All application routes
+└── public/
+    └── assets/                  # CSS, JS, images
+```
 
-### Premium Partners
+## 🚀 Installation
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Prerequisites
 
-## Contributing
+- PHP 8.1 or higher
+- Composer
+- Node.js & NPM
+- MySQL
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Setup Steps
 
-## Code of Conduct
+1. **Clone the repository**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ```bash
+    git clone https://github.com/ayodisu/restrant.git
+    cd restrant
+    ```
 
-## Security Vulnerabilities
+2. **Install PHP dependencies**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    ```bash
+    composer install
+    ```
 
-## License
+3. **Install Node dependencies**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# Laravel-Restaurant-MGT-system
+    ```bash
+    npm install
+    ```
+
+4. **Environment setup**
+
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+
+5. **Configure database** in `.env`
+
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=restrant
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
+
+6. **Run migrations**
+
+    ```bash
+    php artisan migrate
+    ```
+
+7. **Build assets**
+
+    ```bash
+    npm run dev
+    ```
+
+8. **Start the server**
+    ```bash
+    php artisan serve
+    ```
+
+Visit `http://localhost:8000` to access the application.
+
+## 🔐 Authentication
+
+### User Authentication
+
+- Register: `/register`
+- Login: `/login`
+- Access bookings, orders, and reviews after login
+
+### Admin Authentication
+
+- Admin Login: `/admin/login`
+- Separate guard system for admin access
+- Protected admin dashboard at `/admin/index`
+
+## 📍 Routes Overview
+
+| Route                 | Description                |
+| --------------------- | -------------------------- |
+| `/`                   | Homepage with menu preview |
+| `/about`              | About page                 |
+| `/services`           | Services page              |
+| `/contact`            | Contact page               |
+| `/food/menu`          | Full menu                  |
+| `/food/cart`          | Shopping cart              |
+| `/food/checkout`      | Checkout page              |
+| `/users/all-bookings` | User's bookings            |
+| `/users/all-orders`   | User's orders              |
+| `/admin/login`        | Admin login                |
+| `/admin/index`        | Admin dashboard            |
+| `/admin/all-orders`   | Manage orders              |
+| `/admin/all-bookings` | Manage bookings            |
+| `/admin/all-foods`    | Manage food items          |
+| `/admin/all-admins`   | Manage admins              |
+
+## 📊 Database Models
+
+| Model      | Description                               |
+| ---------- | ----------------------------------------- |
+| `User`     | Customer accounts                         |
+| `Admin`    | Administrator accounts                    |
+| `Food`     | Menu items (name, price, image, category) |
+| `Cart`     | Shopping cart items                       |
+| `Checkout` | Completed orders                          |
+| `Booking`  | Table reservations                        |
+| `Review`   | Customer reviews                          |
+
+## 🎨 UI Features
+
+- **Responsive Design** - Mobile-first approach
+- **Toast Notifications** - Success/error feedback
+- **Modern Admin Panel** - Dark sidebar, stat cards, action buttons
+- **Status Badges** - Visual order/booking status indicators
+- **Form Validation** - Client and server-side validation
+
+## 📝 License
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## 👨‍💻 Developer
+
+**Abdulwahab Disu**
+
+- GitHub: [@ayodisu](https://github.com/ayodisu)
+- Twitter: [@\_ayodisu](https://x.com/_ayodisu)
+- LinkedIn: [abdulwahabdisu](https://www.linkedin.com/in/abdulwahabdisu/)
+
+---
+
+⭐ Star this repo if you find it helpful!
